@@ -1,7 +1,0 @@
-{
-  "name" : "KeNong",
-  "repositories" : [ {
-    "type" : "composer",
-    "url" : "https://packagist.org/"
-  } ]
-}
