@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 商品管理 - 添加商品</title>
+    
+    
+</head>
+
+<body>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>商品管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="__MODULE__/Index/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Goods/Index">商品管理</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Goods/Index">商品列表</a>
+                        </li>
+                        <li>
+                            <strong>添加商品</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>添加商品</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <form  role="form" id="form1" method="post"  action="__MODULE__/Goods/save_goods" class="form-horizontal" enctype="multipart/form-data" />
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品名称</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="title"  id="title" placeholder="请输入商品名称">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品品牌</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control m-b" name="brand">
+                                                <option value="0">请选择品牌</option>
+                                                <volist name="brand" id="b">
+                                                <option value="{$b.b_id}">{$b.brand}</option>
+                                                </volist>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                  <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品分类</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control m-b" name="category" >
+                                                <option>请选择分类</option>
+                                                <volist name="cate" id="c">
+                                                <option value="{$c.id}">{$c.html}{$c.name}</option>
+                                                </volist>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品图片</label>
+                                        <div class="col-sm-10">
+                                        <input  type="file" name="photo" id="exampleInputFile"  >
+                                        <span class="help-block m-b-none">默认主图尺寸为：640*640 </span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品规格</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="model"  placeholder="请输入商品规格">
+                                            <span class="help-block m-b-none">如商品有其他规格属性，包装信息请在这里填写！</span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品价格</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="price"  placeholder="请输入商品价格">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品数量</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="num"  placeholder="请输入商品数量 ">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">商品详情</label>
+                                        <div class="col-sm-10">
+                                          <textarea id="editor_id" class="form-control"  name="content"  style="height:400px;">
+                                          </textarea>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">是否包邮</label>
+                                        <div class="col-sm-10">
+                                            <input name="free_shipping" type="radio" value="1">
+                                            <label class="control-label">包邮</label>
+                                            <input name="free_shipping" type="radio" value="0">
+                                            <label class="control-label">不包邮</label>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">是否推荐</label>
+                                        <div class="col-sm-10">
+                                            <input name="tuijian" type="radio" value="1">
+                                            <label class="control-label">推荐</label>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <button class="btn btn-primary" type="submit">保存内容</button>
+                                            <button class="btn btn-white" type="reset">取消</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- Script kindeditor -->
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-all-min.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh-CN.js"></script>
+    <script>
+	KindEditor.options.filterMode = false;
+
+	KindEditor.ready(function(K) {
+			window.editor = K.create('#editor_id');
+	});
+    </script>
+    <!-- Jquery Validate -->
+    <script src="__PUBLIC__/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/validate/messages_zh.min.js"></script>
+	<script>
+
+    $().ready(function () {
+        // validate the comment form when it is submitted
+
+        // validate signup form on keyup and submit
+        $("#form1").validate({
+            rules: {
+                title: {
+                    required: true,
+                    minlength: 3
+                },
+                category: {
+                     required:true,
+                    },
+                photo: {
+                    required: true,
+                },
+                price: {
+                    required: true,
+                    number:true,
+                },
+                num:{
+                    required:true,
+                    digits:true,
+                    },
+                content:{
+                    required:true,
+                    },
+
+            },
+            messages: {
+                title: {
+                    required: "请输入商品名称",
+                    minlength: "商品名称最少3个字符以上"
+                },
+                 category: {
+                    required: "请选择商品分类",
+                },
+                 photo: {
+                    required: "请上传商品主图",
+                },
+				price:{
+					required: "请输入商品价格",
+					number: "请输入正确的金额",
+					},
+				num:{
+					required: "请输入商品库存数量",
+					digits: "商品数量必须填写数字",
+					},
+				content:{
+					required: "请填写商品详情内容",
+					},
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

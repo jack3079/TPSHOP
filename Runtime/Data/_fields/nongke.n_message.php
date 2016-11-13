@@ -1,0 +1,1 @@
+a:8:{i:0;s:6:"msg_id";i:1;s:8:"msg_type";i:2;s:9:"info_type";i:3;s:7:"msg_key";i:4;s:8:"msg_info";i:5;s:10:"createtime";s:3:"_pk";s:6:"msg_id";s:5:"_type";a:6:{s:6:"msg_id";s:7:"int(11)";s:8:"msg_type";s:11:"varchar(15)";s:9:"info_type";s:11:"smallint(5)";s:7:"msg_key";s:11:"varchar(20)";s:8:"msg_info";s:12:"varchar(500)";s:10:"createtime";s:7:"int(11)";}}

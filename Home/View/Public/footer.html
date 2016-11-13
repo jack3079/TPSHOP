@@ -1,0 +1,31 @@
+<div class=" site-footer">
+    <div class="text-center">
+        {$system .icp}
+    </div>
+    <div class="text-center">
+        {$system .copyright}
+    </div>
+</div>
+
+
+<div id="nav">
+	<ul class="list-group navlist">   	
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-home"></span><p>首页</p></a></li>
+		<li><a href="{:U('Book/index')}"><span class="glyphicon glyphicon-align-justify"></span><p>商品分类</p></a></li>
+        <li id="n_3"><a href="{:U('Shopcart/index')}"><span class="glyphicon glyphicon-shopping-cart"></span><p>购物车</p></a>
+        <if condition="$cart_num"><b id="cart_num"><!--{$cart_num}-->1</b></if></li>
+        <li><a href="{:U('User/index')}"><span class="glyphicon glyphicon-user"></span><p>会员中心</p></a><i></i></li>
+    </ul>
+</div>
+<script>
+$(window.onresize = function(){
+	var width=window.outerWidth;
+	if(width>=768){
+		$("#nav").hide();
+		}
+	if(width<=769){
+		$("#nav").show();
+		}
+	})
+</script>
+

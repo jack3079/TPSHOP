@@ -1,0 +1,141 @@
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+
+                        <div class="dropdown profile-element"> <span>
+                            <img class="img-circle" src="__PUBLIC__/admin/img/profile_small.jpg" />
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{$Manage}</strong>
+                             </span>  <span class="text-muted text-xs block">网站管理员 <b class="caret"></b></span> </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="__MODULE__/Admin/editAdmin/admin_id/{$Manageid}">修改密码</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="__MODULE__/Public/logout">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            科农
+                        </div>
+
+                    </li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">商城设置</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/Index/index">后台首页</a>
+                            </li>
+                            <li><a href="__MODULE__/System/index">网站设置</a>
+                            </li>
+                            <li><a href="__MODULE__/System/weixin">微信设置</a>
+                            </li>
+                            <li><a href="__MODULE__/System/sms">短信设置</a>
+                            </li>
+                            <li><a href="__MODULE__/Ad/index">广告管理</a>
+                            </li>
+                            <li><a href="__MODULE__/Admin/index">管理员管理</a>
+                            </li>
+                        </ul>
+                    </li>                    
+
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-shopping-cart"></i> <span class="nav-label">商品管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/Goods/index">商品列表</a>
+                            </li>
+                            <li><a href="__MODULE__/Goods/addGoods">添加商品</a>
+                            </li>
+                            <li><a href="__MODULE__/Category/index">商品分类</a>
+                            </li>
+                            <li><a href="__MODULE__/Brand/index">品牌管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i> <span class="nav-label">交易管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/Order/index">订单管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-plane"></i> <span class="nav-label">物流管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/Shipping/index">快递管理</a>
+                            </li>
+                            <li><a href="__MODULE__/Freight/index">运费设置</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-credit-card"></i> <span class="nav-label">支付管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/Pay/alipay">支付宝设置</a>
+                            </li>
+                            <li><a href="__MODULE__/Pay/wxpay">微信支付设置</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="img-circle glyphicon glyphicon-user"></i> <span class="nav-label">客户管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/User/index">客户列表</a>
+                            </li>
+                            <li><a href="__MODULE__/Rank/index">客户组管理</a>
+                            </li>
+                            <li><a href="">分销提成</a>
+                            </li>
+                            <li><a href="">提现管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-edit"></i> <span class="nav-label">内容管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/NewsCate/index">分类管理</a>
+                            </li>
+                            <li><a href="__MODULE__/News/index">新闻管理</a>
+                            </li>
+                            <li><a href="__MODULE__/News/about">单页管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-weixin"></i> <span class="nav-label">微信管理</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="__MODULE__/Wechat/keyword">关键字回复</a>
+                            </li>
+                            <li><a href="__MODULE__/Wechat/Sucai">素材管理</a>
+                            </li>
+                            <li><a href="__MODULE__/Wechat/menu">自定义菜单</a>
+                            </li>
+                        </ul>
+                    </li>
+               </ul>     
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message"><a href="__MODULE__" title="返回首页"><i class="fa fa-home"></i></a>欢迎{$Manage}登录后台管理中心</span>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Public/logout">
+                                <i class="fa fa-sign-out"></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>

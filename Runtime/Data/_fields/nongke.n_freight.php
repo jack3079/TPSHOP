@@ -1,0 +1,1 @@
+a:8:{i:0;s:4:"f_id";i:1;s:11:"shipping_id";i:2;s:6:"f_area";i:3;s:6:"weight";i:4;s:12:"fist_freight";i:5;s:12:"next_freight";s:3:"_pk";s:4:"f_id";s:5:"_type";a:6:{s:4:"f_id";s:7:"int(11)";s:11:"shipping_id";s:6:"int(5)";s:6:"f_area";s:12:"varchar(200)";s:6:"weight";s:7:"int(11)";s:12:"fist_freight";s:13:"decimal(10,2)";s:12:"next_freight";s:13:"decimal(10,2)";}}

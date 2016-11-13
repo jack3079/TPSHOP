@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 客户管理 - 客户组管理</title>
+    
+</head>
+
+<body>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>客户组管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="__MODULE__/Index/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/User/index">客户管理</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Rank/index">客户组管理</a>
+                        </li>
+                        <li>
+                            <strong>客户组列表</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>客户组列表</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link" title="收起页面">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+
+                                    <a title="添加管理员" href="__MODULE__/Rank/addRank" class="close-link">
+                                    <i class="fa fa-plus text-navy"></i>
+                                    </a>
+                                    <a href="#" class="close-link" title="隐藏页面">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="ibox-content">
+                                <div class="row">
+
+                                    <div class="col-sm-4 m-b-xs">
+                                    <!--中间部分为空-->
+                                    </div>
+                                </div>
+
+                                <!--表格-->
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+
+                                                <th>ID</th>
+                                                <th>客户组名称</th>
+                                                <th>折扣率</th>
+                                                <th>简介</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <volist name="rank" id="vo">
+                                            <tr>
+                                                <td>
+                                                    <span>{$vo.r_id}</span>
+                                                </td>
+                                                <td>{$vo.r_name}</td>
+                                                <td>{$vo.discounts}%</td>
+                                                <td>{$vo.about}</td>
+                                                <td>
+                                                <a href="__MODULE__/Rank/editRank/id/{$vo.r_id}"><i class="fa fa-edit text-navy"></i></a>
+                                                <a href="__MODULE__/Rank/del_rank/id/{$vo.r_id}"><i class="fa  fa-trash-o text-danger"></i></a>
+                                                </td>
+                                            </tr>  
+                                            </volist>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+</body>
+</html>

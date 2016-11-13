@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 微信设置</title>
+    
+    
+</head>
+
+<body>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>微信设置</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="__MODULE__/Index/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/System/index">商城设置</a>
+                        </li>
+                        <li>
+                            <strong>微信设置</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>微信接口配置</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <form  role="form" id="form" method="post" action="__MODULE__/System/saveSite" class="form-horizontal" enctype="multipart/form-data" />
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">微信接口URL</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="weiurl" value="{$system.url}/weixin/weixinApi.php" disabled id="disabledInput">
+                                            <span class="help-block m-b-none">请将此地址复制到<A href="https://mp.weixin.qq.com/" target="_blank" >微信公众平台</A>接口URL项</span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">微信Token</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="token" value="{$system.token}" placeholder="请输入微信TOKEN">
+                                            <span class="help-block m-b-none">请与<A href="https://mp.weixin.qq.com/" target="_blank">微信公众平台</A>Token保持一致	</span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">AppID(应用ID)</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="appid" value="{$system.appid}" placeholder="请输入微信AppID">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">AppSecret(应用密钥)</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="appsecret" value="{$system.appsecret}" placeholder="请输入微信AppSecret(应用密钥)">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">公众号二维码</label>
+                                        <div class="col-sm-10">
+                                        <img src="__PUBLIC__/{$system.qrcode}"  width="100" height="100" class="thumbnail">
+                                        <input  type="file" name="qrcode" id="exampleInputFile"  >
+                                        </div>
+                                    </div>
+        
+
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <button class="btn btn-primary" type="submit">保存内容</button>
+                                            <button class="btn btn-white" type="reset">取消</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Jquery Validate -->
+    <script src="__PUBLIC__/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/validate/messages_zh.min.js"></script>
+        <script>
+        $(document).ready(function () {
+
+            $("#form").validate({
+                rules: {
+                    wechat: {
+                        required: true,
+                    },
+                    weiurl: {
+                        required: true,
+                        url: true
+                    },
+                    token: {
+                        required: true
+                    },
+                }
+            });
+        });
+    </script>
+    </body>
+</html>

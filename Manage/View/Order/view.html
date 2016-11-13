@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 交易管理 - 订单管理</title>
+    <link href="__PUBLIC__/js/plugins/fancybox/jquery.fancybox.css" rel="stylesheet">
+    
+</head>
+
+<body>
+            
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-8">
+                    <h2>订单管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="__MODULE__/Index/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Order/index">交易管理</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Order/index">订单管理</a>
+                        </li>
+                        <li>
+                            <strong>订单详情</strong>
+                        </li>
+                    </ol>
+                </div>
+                 <volist name="order" id="vo">  
+                <div class="col-lg-4">
+                    <div class="title-action">
+                        <a href="__MODULE__/Order/quxiao/id/{$vo.o_id}" class="btn btn-white"><i class="fa fa-pencil"></i>取消订单</a>
+                        <!--<a href="#" class="btn btn-white"><i class="fa fa-check "></i> 保存 </a>-->
+                        <a href="__MODULE__/Order/order_print/id/{$vo.o_id}" target="_blank" class="btn btn-primary"><i class="fa fa-print"></i> 打印 </a>
+                    </div>
+                </div>
+            </div>      
+            
+         
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="wrapper wrapper-content animated fadeInRight">
+                    
+                    
+                    
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="m-b-md">
+                                            <h2>订单详情</h2>
+                                        </div>
+                                        <dl class="dl-horizontal">
+                                            <dt>订单状态：</dt> 
+                                            <dd><span class="label label-primary"><if condition="$vo.status eq 0">未付款<elseif condition="$vo.status eq 1" />待发货<elseif condition="$vo.status eq 2" />已发货<elseif condition="$vo.status eq 3" />交易完成<else />订单已取消</if></span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <dl class="dl-horizontal">
+
+                                            <dt>订单编号：</dt> 
+                                            <dd>{$vo.number}</dd>
+                                            <dt>订单总额：</dt> 
+                                            <dd>&yen;{$vo.total}元</dd>
+                                            <dt>商品数量：</dt> 
+                                            <dd>{$vo.o_num}件</dd>
+                                            <dt>支付方式：</dt> 
+                                            <dd>{$vo.pay.payname}</dd>
+                                            <dt>配送方式：</dt> 
+                                            <dd>{$vo.shipping.shipping_name}</dd>
+                                            <dt>快递单号：</dt> 
+                                            <dd>{$vo.k_number}</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-lg-7" id="cluster_info">
+                                        <dl class="dl-horizontal">
+
+                                            <dt>下单时间：</dt> 
+                                            <dd>{$vo.order_time|date="Y-m-d H:i:s",###}</dd>
+                                            <dt>付款时间：</dt> 
+                                            <dd>{$vo.pay_time|date="Y-m-d H:i:s",###}</dd>
+                                            <dt>发货时间：</dt>
+                                            <dd><if condition="$vo.f_time eq 0">未发货<else />{$vo.f_time|date="Y-m-d H:i:s",###}</if></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <dl class="dl-horizontal">
+                                            <dt>客户留言</dt>
+                                            <dd>{$vo.gustbook}</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                            </div>
+                    
+                    
+                    
+                    
+                        <div class="ibox-content p-xl">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <address>
+                                        <strong>收货人：</strong>{$vo.user.user_name}<br>
+                                        <strong>收货地址：</strong>{$vo.user.address}<br>
+                                        <abbr>联系电话：</abbr>{$vo.user.mobile}
+                                    </address>
+                                </div>
+
+                                <div class="col-sm-6 text-right">
+                                    <h4>单据编号：</h4>
+                                    <h4 class="text-navy">{$vo.number}</h4>
+                                    <address>
+                                        <strong>{$system.sitename}</strong><br>
+                                        {$system.address}<br>
+                                        <abbr>客服：</abbr>{$system.tel}
+                                    </address>
+                                    <p>
+                                        <span><strong>日期：</strong>{$vo.order_time|date="Y-m-d H:i:s",###}</span>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive m-t">
+                                <table class="table invoice-table">
+                                    <thead>
+                                        <tr>
+                                            <th>清单</th>
+                                            <th>数量</th>
+                                            <th>单价</th>
+                                            <th>折扣</th>
+                                            <th>折后总价</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                            <div>
+                                            <a class="fancybox" href="__PUBLIC__/{$vo.goods.photo}" title="{$vo.goods.title}">
+                                            <img alt="{$vo.goods.title}" src="__PUBLIC__/{$vo.goods.photo}" style=" height:50px; width:auto;">
+                                            </a>
+                                                <strong>{$vo.goods.title}</strong>
+                                                </div>
+                                            </td>
+                  
+                                            <td>{$vo.o_num}</td>
+                                            <td>&yen;{$vo.goods.price}</td>
+                                            <td>{$zhekou[0]['discounts']}%</td>
+                                            <td>&yen;{$vo['o_num'] * ($vo['goods']['price']*($zhekou[0]['discounts']/100))}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /table-responsive -->
+
+                            <table class="table invoice-total">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>总价：</strong>
+                                        </td>
+                                        <td>&yen;{$vo['o_num'] * ($vo['goods']['price']*($zhekou[0]['discounts']/100))}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>运费：</strong>
+                                        </td>
+                                        <td>&yen;{$vo.yunfei}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>总计</strong>
+                                        </td>
+                                        <td>&yen;{$vo['o_num'] * ($vo['goods']['price']*($zhekou[0]['discounts']/100))+$vo['yunfei']}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-truck"></i>去发货</button>
+                            </div>
+
+<!--                            <div class="well m-t"><strong>备注：</strong>
+                                 <input type="text" class="form-control" name="beizhu" value="{$vo.beizhu}"  placeholder="请输入备注">
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>    
+            
+<!--发货部分开始-->
+        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated bounceInRight">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                        </button>
+                        <i class="fa fa-laptop modal-icon"></i>
+                        <h4 class="modal-title">订单发货</h4>
+                </div>
+                <form  role="form" id="form" method="post"  action="__MODULE__/Order/save_kuaidi" class="form-horizontal" >
+                <div class="modal-body">
+                <div class="form-group">
+                <label>快递名称</label>
+                <select class="form-control m-b" name="shipping_id">
+                    <volist name="kuaidi" id="k">
+                    <option value="{$k.s_id}" <if condition="$vo['shipping_id'] eq $k['s_id']">selected</if> >{$k.shipping_name}</option>  
+                    </volist>
+                </select>
+                 </div>
+                <div class="form-group">
+                <label>快递单号</label>
+                 <input type="text" name="k_number" value="{$vo.k_number}" placeholder="请输入快递单号" class="form-control">
+                 </div>
+                </div>
+                <div class="modal-footer">
+                <input type="hidden" name="o_id" value="{$vo.o_id}">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">确认发货</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--发货结束-->
+            </volist>
+     <!-- Fancy box查看大图效果 CLASS为fancybox -->
+    <script src="__PUBLIC__/js/plugins/fancybox/jquery.fancybox.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.fancybox').fancybox({
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+        });
+    </script>  
+    
+</body>
+</html>

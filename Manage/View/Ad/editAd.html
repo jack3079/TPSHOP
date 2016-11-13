@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 广告管理 - 编辑广告</title>
+    
+    
+</head>
+
+<body>
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>广告管理</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="__MODULE__/Index/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/System/index">商城设置</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/Ad/index">广告列表</a>
+                        </li>
+                        <li>
+                            <strong>编辑广告</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>编辑广告</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <form  role="form" id="form" method="post" action="__MODULE__/Ad/save_edit" class="form-horizontal" enctype="multipart/form-data" />
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告名称</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="ad_name"  value="{$ad.ad_name}" placeholder="请输入广告名称">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告位置</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control m-b" name="ad_classid">
+                                                <option value="1" <if condition="$ad.ad_classid eq 1">selected</if>>商城首页广告</option>
+                                                <option value="2" <if condition="$ad.ad_classid eq 2">selected</if>>产品页广告</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告图片</label>
+                                        <div class="col-sm-10">
+                                        <img src="__PUBLIC__/{$ad.ad_img}"  class="thumbnail">
+                                        <input  type="file" name="ad_img" id="exampleInputFile" value="{$ad.ad_img}" />
+                                        <span class="help-block m-b-none">首页广告图片尺寸为：730*395 </span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">广告链接网址</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="ad_url" value="{$ad.ad_url}"  placeholder="请输入广告链接网址">
+
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-4 col-sm-offset-2">
+                                            <input type="hidden" name="ad_id" value="{$ad.ad_id}">
+                                            <button class="btn btn-primary" type="submit">保存内容</button>
+                                            <button class="btn btn-white" type="reset">取消</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Jquery Validate -->
+    <script src="__PUBLIC__/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/validate/messages_zh.min.js"></script>
+        <script>
+        $(document).ready(function () {
+
+            $("#form").validate({
+                rules: {
+                    ad_name: {
+                        required: true,
+                    },
+                    ad_url: {
+                        url: true
+                    },
+                }
+            });
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+a:7:{i:0;s:5:"payid";i:1;s:7:"payname";i:2;s:7:"paytype";i:3;s:9:"payconfig";i:4;s:9:"paystatus";s:3:"_pk";s:5:"payid";s:5:"_type";a:5:{s:5:"payid";s:7:"int(11)";s:7:"payname";s:11:"varchar(50)";s:7:"paytype";s:11:"varchar(50)";s:9:"payconfig";s:12:"varchar(255)";s:9:"paystatus";s:10:"tinyint(1)";}}

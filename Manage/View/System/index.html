@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 商城设置</title>
+    
+    
+</head>
+
+<body>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>网站设置</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="__MODULE__/Index/index">主页</a>
+            </li>
+            <li>
+                <a href="__MODULE__/System/index">商城设置</a>
+            </li>
+            <li>
+                <strong>网站设置</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>网站基本信息设置</h5>
+                </div>
+                <div class="ibox-content">
+                    <form  role="form" id="form" method="post" action="__MODULE__/System/saveSite" class="form-horizontal" enctype="multipart/form-data" />
+                    
+                   <!--start-->                   
+                  <div class="container-fluid">
+                      <div class="row-fluid">
+                          <div class="span12">
+                              <div class="tabbable" id="tabs-296440">
+                                  <ul class="nav nav-tabs">
+                                      <li class="active">
+                                          <a href="#panel-333787" data-toggle="tab">网站设置</a>
+                                      </li>
+                                      <li>
+                                          <a href="#panel-230608" data-toggle="tab">分销设置</a>
+                                      </li>
+                                  </ul>
+                                  <div class="tab-content">
+                                      <div class="tab-pane active" id="panel-333787">
+                                        <!--tab1-->
+                                   <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                        <label class="col-sm-2 control-label">网站名称</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="sitename" value="{$system.sitename}" >
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">网站网址</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="url" value="{$system.url}" >
+                                            <!--<span class="help-block m-b-none">帮助文本</span>-->
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">SEO关键字</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="keyword" value="{$system.keyword}" placeholder="请输入网站关键字">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">网站描述</label>
+                                        <div class="col-sm-10">
+                                        <textarea placeholder="请输入网站描述信息"  cols="2" rows="2" class="form-control" name="description">{$system.description}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">网站LOGO</label>
+                                        <div class="col-sm-10">
+                                        <img src="__PUBLIC__/{$system.logo}"   height="100" class="thumbnail">
+                                        <input  type="file" name="logo" id="exampleInputFile"  >
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">公司联系人</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="contact" value="{$system.contact}" placeholder="请输入联系人姓名">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">电子邮件</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="email" value="{$system.email}" placeholder="请输入EMAIL">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系电话</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="tel" value="{$system.tel}" placeholder="请输入联系电话">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">公司传真</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="fax" value="{$system.fax}" placeholder="请输入传真号码">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系手机</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="phone" value="{$system.phone}" placeholder="请输入手机号码">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系地址</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="address" value="{$system.address}" placeholder="请输入联系地址">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">备案信息</label>
+                                        <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="icp" value="{$system.icp}" placeholder="请输入备案IPC号">
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">版权信息</label>
+                                        <div class="col-sm-10">
+                                        <textarea placeholder="请输入网站底部版权描述"  cols="1" rows="3" class="form-control" name="copyright">{$system.copyright}</textarea>
+                                        </div>
+                                    </div>
+                                         <!-- tab1 end-->
+                                      </div>
+                                      <div class="tab-pane" id="panel-230608">
+                                  <div class="hr-line-dashed"></div>
+                                   <div class="form-group">
+                                        <label class="col-sm-2 control-label">分销层数</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="fenxiao" value="{$system.fenxiao}" >
+                                            <span class="help-block m-b-none">*注：分销层数设置请不要超过3层，只能填写数字</span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">分销佣金</label>
+                                        <div class="col-sm-10 input-group m-b">
+                                            <input type="text" class="form-control" name="yongjin" value="{$system.yongjin}" placeholder="佣金设置务必与分销层数一致，并用|隔开，比如分销设置三层，那么佣金设置就是15|10|5"><span class="input-group-addon">%</span>
+                                        </div>
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-10">
+                                        <span class="help-block m-b-none">*注：佣金设置务必与分销层数一致，并用|隔开，比如分销设置三层，那么佣金设置就是15|10|5</span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">提现金额</label>
+                                        <div class="col-sm-10 input-group m-b">
+                                            <input type="text" class="form-control" name="tixian" value="{$system.tixian}" placeholder="会员分销佣金金额达到多少可提现，如不设置则默认100元。"><span class="input-group-addon">元</span>
+                                        </div>
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-10">
+                                        <span class="help-block m-b-none">*注：会员分销佣金金额达到多少可提现，如不设置则默认100元，只能填写数字。</span>
+                                        </div>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">手续费设置</label>
+                                        <div class="col-sm-10 input-group m-b">
+                                            <input type="text" class="form-control" name="shouxufei" value="{$system.shouxufei}" placeholder="提现手续费设置"><span class="input-group-addon">%</span>
+                                        </div>
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-10">
+                                        <span class="help-block m-b-none">*注：提现手续费设置，只能填写数字。</span>
+                                        </div>                                        
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">自动收货时间</label>
+                                        <div class="col-sm-10 input-group m-b">
+                                            <input type="text" class="form-control" name="day" value="{$system.day}" placeholder="自动确认收货时间设置"><span class="input-group-addon">天</span>
+                                        </div>
+                                        <div class="col-sm-2"></div>
+                                        <div class="col-sm-10">
+                                        <span class="help-block m-b-none">*注：自动确认收货时间设置，只能填写数字。</span>
+                                        </div>                                        
+                                    </div>
+                                    
+
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>                    
+                   <!--end-->                   
+                    
+                  <div class="hr-line-dashed"></div>
+                  <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                          <button class="btn btn-primary" type="submit">保存内容</button>
+                          <button class="btn btn-white" type="reset">取消</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+    <!-- Jquery Validate -->
+    <script src="__PUBLIC__/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/js/plugins/validate/messages_zh.min.js"></script>
+        <script>
+        $(document).ready(function () {
+
+            $("#form").validate({
+                rules: {
+                    sitename: {
+                        required: true,
+                        minlength: 3
+                    },
+                    url: {
+                        required: true,
+                        url: true
+                    },
+                    email: {
+                        email: true
+                    },
+                    fenxiao: {
+                        digits: true
+                    },
+                    tixian: {
+                        number: true
+                    },
+                    shouxufei: {
+                        number: true
+                    },
+                    day: {
+                        digits: true
+                    },
+                }
+            });
+        });
+    </script>
+    </body>
+</html>

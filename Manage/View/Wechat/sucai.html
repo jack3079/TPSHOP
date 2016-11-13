@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <title>{$system.sitename}后台管理中心 - 微信管理 - 添加多图文</title>    
+    <link href="__PUBLIC__/admin/css/wechat.css" rel="stylesheet">
+    
+</head>
+
+<body>
+<block name="body">
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>微信管理</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="__MODULE__/Index/index">主页</a>
+            </li>
+            <li>
+                <a href="__MODULE__/System/weixin">微信配置</a>
+            </li>
+            <li>
+                <a href="__MODULE__/System/weixin">素材管理</a>
+            </li>
+            <li>
+                <strong>素材列表</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">            
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>添加图文素材</h5>
+                            </div>
+                            <div class="ibox-content">
+                            
+
+  <div class="span9 page_message">
+    <section id="contents"> 
+      <div class="table-bar">
+      	<div class="fl">
+
+			<div class="tools">
+				菜单<a class="btn" href="__MODULE__/Wechat/sucai_add">新 增</a>
+
+                <a class="btn" href="">一键上传素材到微信素材库</a>
+                <a class="btn" href="">一键下载微信素材库到本地</a>
+
+                
+
+
+                <button class="btn " target-form="ids" url="">标题</button>
+
+                <a class="btn" href="">标题</a>
+
+                &nbsp;
+       
+			</div>
+
+        </div>
+        <div class="search-form fr cf">
+          <div class="sleft">
+
+            <input type="text" name="" class="search-input" value="" placeholder="">
+            <a class="sch-btn" href="javascript:;" id="search" url=""><i class="btn-search"></i></a> </div>
+        </div>
+      </div>
+      <!-- 数据列表 -->
+      <div class="data-table">
+      
+        <div class="table-striped">
+        	<ul class="material_list js-masonry"  data-masonry-options=''>
+
+            	<!-- 单图文 -->
+                <li class="appmsg_li">
+                	<div class="appmsg_item">
+                        <h6 style="overflow: hidden;"><a href="" target= _blank>标题</a></h6>
+                        <p class="title">时间</p>
+                        <div class="main_img">
+                            <img src="图片"/>
+                        </div>
+                        <p class="desc" style="overflow: hidden;">介绍</p>
+                    </div>
+                    <div class="appmsg_action">
+                    	<a href="">编辑</a>
+                        <a href="">删除</a>	
+                    </div>
+                </li>
+
+                <!-- 多图文 -->
+                <li class="appmsg_li">
+                	<div class="appmsg_item">
+                        <p class="title">时间</p>
+                        <div class="main_img">
+                            <img src=""/>
+                            <h6><a href="" target= _blank>标题</a></h6>
+                        </div>
+                        <p class="desc">介绍</p>
+                    </div>
+
+                    <div class="appmsg_sub_item">
+                        <p class="title"><a href="" target= _blank>标题</a></p>
+                        <div class="main_img">
+                            <img src=""/>
+                        </div>
+                    </div>
+
+                    <div class="appmsg_action">
+                    	<a href="">编辑</a>
+                        <a href="">删除</a>	
+                    </div>
+                </li>
+                </if>
+
+            </ul>
+          
+        </div>
+      </div>
+      <div class="page"> 分页</div>
+    </section>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</block>
+<block name="script"> 
+  <script type="text/javascript">
+$(function(){
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+        if(query == '' ){
+            url = $(this).attr('url');
+        	
+        }
+		window.location.href = url;
+	});
+
+    //回车自动提交
+    $('.search-form').find('input').keyup(function(event){
+        if(event.keyCode===13){
+            $("#search").click();
+        }
+    });
+
+})
+</script> 
+</block>
+</body>
+</html>
+
